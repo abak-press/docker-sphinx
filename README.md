@@ -1,1 +1,3 @@
-# docker-sphinx
+# About this Repo
+
+This is the Git repo of the Docker image for Sphinx service.
