@@ -10,7 +10,7 @@ ENV LC_ALL en_US.UTF-8
 
 ENV SPHINX_PACKAGE sphinxsearch_2.2.11-release-1~trusty_amd64.deb
 
-COPY sphinx-contrib-2.0.0.deb /tmp/sphinx-contrib-2.0.0.deb
+COPY sphinx-contrib-2.1.0.deb /tmp/sphinx-contrib-2.1.0.deb
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
   && apt-get install -yq --no-install-recommends \
@@ -23,9 +23,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
     unixodbc \
   && curl -o /tmp/${SPHINX_PACKAGE} http://sphinxsearch.com/files/${SPHINX_PACKAGE} \
   && dpkg -i /tmp/${SPHINX_PACKAGE} \
-  && dpkg -i /tmp/sphinx-contrib-2.0.0.deb \
+  && dpkg -i /tmp/sphinx-contrib-2.1.0.deb \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /tmp/sphinx-contrib-2.0.0.deb\
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /tmp/sphinx-contrib-2.1.0.deb\
   && truncate -s 0 /var/log/*log
 
 RUN mkdir /var/run/sshd \
