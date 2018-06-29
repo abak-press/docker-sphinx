@@ -11,9 +11,9 @@ fi
 
 # check for the expected command
 if [ "$1" = 'sshd' ]; then
-    mkdir -p ${SPHINXDATA}/{conf,data,binlog,log,pids}
-    chmod -R 700 ${SPHINXDATA}
-    chown -R sphinx ${SPHINXDATA}
+    mkdir -p ${SPHINXDATA}/{conf,data,binlog}
+    chmod -R 700 /sphinx
+    chown -R sphinx /sphinx
 
     if [ -f "${SPHINXDATA}/conf/sphinx.conf"  ]; then
       sudo -u sphinx searchd --config "${SPHINXDATA}/conf/sphinx.conf" || true
